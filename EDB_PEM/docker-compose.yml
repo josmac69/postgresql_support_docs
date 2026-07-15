@@ -1,0 +1,57 @@
+version: '3.9'
+
+services:
+  pem-server-db:
+    image: postgres:16-bookworm
+    container_name: pem-server-db
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgrespass
+    ports:
+      - "5437:5432"
+    volumes:
+      - ./init-pem-db.sql:/docker-entrypoint-initdb.d/init-pem-db.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d postgres"]
+      timeout: 5s
+      retries: 5
+
+  pem-web-console:
+    image: dpage/pgadmin4
+    container_name: pem-web-console
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@pem.local
+      - PGADMIN_DEFAULT_PASSWORD=adminpass
+      - PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION=False
+    ports:
+      - "8085:80"
+    depends_on:
+      - pem-server-db
+
+  db-node:
+    image: postgres:16-bookworm
+    container_name: db-node
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgrespass
+    ports:
+      - "5436:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d postgres"]
+      timeout: 5s
+      retries: 5
+
+  pem-agent:
+    build: .
+    container_name: pem-agent
+    environment:
+      - PEM_SERVER_HOST=pem-server-db
+      - DB_NODE_HOST=db-node
+      - AGENT_DISPLAY_NAME=production-db-node
+    depends_on:
+      pem-server-db:
+        condition: service_healthy
+      db-node:
+        condition: service_healthy

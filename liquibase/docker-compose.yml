@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+  postgres-db:
+    image: postgres:15
+    container_name: postgres-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespass
+      POSTGRES_DB: mydatabase
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  liquibase:
+    image: liquibase/liquibase:latest
+    container_name: liquibase-runner
+    depends_on:
+      postgres-db:
+        condition: service_healthy
+    volumes:
+      # Mount the local changelog directory to the container
+      - ./changelog:/liquibase/changelog
+    environment:
+      # Liquibase configuration via environment variables
+      LIQUIBASE_COMMAND_URL: jdbc:postgresql://postgres-db:5432/mydatabase
+      LIQUIBASE_COMMAND_USERNAME: postgres
+      LIQUIBASE_COMMAND_PASSWORD: postgrespass
+      LIQUIBASE_COMMAND_CHANGELOG_FILE: changelog/db.changelog-master.yaml
+    # The command to execute (update applies the pending changesets)
+    command: update
