@@ -2,6 +2,17 @@
 
 The EDB Postgres Migration Toolkit (MTK) is a command-line utility that facilitates the rapid, high-performance migration of database schemas and data from legacy and proprietary engines (Oracle, MS SQL Server, Sybase ASE, MySQL) to PostgreSQL or EDB Postgres Advanced Server (EPAS).
 
+## Directory Files & Automation
+
+This folder contains a fully containerized lab setup to experiment with and run EDB MTK migrations:
+
+*   **[docker-compose.yml](file:///home/josef/github.com/josmac69/postgresql_support_docs/EDB_MTK/docker-compose.yml)**: Provisions a source database (e.g., MySQL) and the EDB MTK runner container.
+*   **[Dockerfile](file:///home/josef/github.com/josmac69/postgresql_support_docs/EDB_MTK/Dockerfile)**: Defines the EDB MTK container image with Java and required client utilities.
+*   **[Makefile](file:///home/josef/github.com/josmac69/postgresql_support_docs/EDB_MTK/Makefile)**: Automates cluster boot, initialization, running migrations, and cleanup.
+*   **[toolkit.properties](file:///home/josef/github.com/josmac69/postgresql_support_docs/EDB_MTK/toolkit.properties)**: Connection configuration template mapping source (MySQL/Oracle) to target (Postgres).
+*   **[init-source.sql](file:///home/josef/github.com/josmac69/postgresql_support_docs/EDB_MTK/init-source.sql)**: Pre-populates the source database with mock schema and datasets.
+*   **[runMTK.sh](file:///home/josef/github.com/josmac69/postgresql_support_docs/EDB_MTK/runMTK.sh)** & **[runMTK.py](file:///home/josef/github.com/josmac69/postgresql_support_docs/EDB_MTK/runMTK.py)**: Shell and Python wrapper scripts to launch EDB MTK migrations within the container.
+
 ---
 
 ## 1. Core Architecture

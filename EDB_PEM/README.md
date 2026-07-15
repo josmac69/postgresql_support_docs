@@ -2,6 +2,16 @@
 
 EDB Postgres Enterprise Manager (PEM) is an enterprise-grade monitoring, management, and tuning platform designed specifically for PostgreSQL and EDB Postgres Advanced Server (EPAS) deployments. Built on top of the open-source **pgAdmin 4** project, PEM extends it with advanced multi-server monitoring, historical metrics storage, alert dispatching, and automated tuning wizards.
 
+## Directory Files & Automation
+
+This folder contains a fully containerized lab setup to experiment with and run EDB PEM:
+
+*   **[docker-compose.yml](file:///home/josef/github.com/josmac69/postgresql_support_docs/EDB_PEM/docker-compose.yml)**: Sets up the EDB PEM Server web console container, backend database, and monitored Postgres nodes.
+*   **[Dockerfile](file:///home/josef/github.com/josmac69/postgresql_support_docs/EDB_PEM/Dockerfile)**: Defines the custom container image for the PEM server or client runtime.
+*   **[Makefile](file:///home/josef/github.com/josmac69/postgresql_support_docs/EDB_PEM/Makefile)**: Automates cluster boot, initialization, agent configuration, and cleanup.
+*   **[init-pem-db.sql](file:///home/josef/github.com/josmac69/postgresql_support_docs/EDB_PEM/init-pem-db.sql)**: Database initialization script for the backend PEM database.
+*   **[pem_agent.py](file:///home/josef/github.com/josmac69/postgresql_support_docs/EDB_PEM/pem_agent.py)**: Python wrapper utility to automatically register local PEM agents.
+
 ---
 
 ## 1. Core Architecture

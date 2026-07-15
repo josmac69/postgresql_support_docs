@@ -10,10 +10,24 @@ To provide a production-ready, version-controlled reference for database adminis
 
 ## Repository Structure
 
-*   `scripts/`: A collection of zero-dependency, read-only diagnostic utilities (described below).
-*   `Linux_support/pkg_audit.sh`: A relative symlink to `scripts/pkg_audit.sh` for distribution-level package auditing.
-*   `DEPLOYMENT_AND_MAINTENANCE.md`: Operational guidelines for deployment and routine maintenance.
-*   `DB_OPERATIONS.md`: Standard operating procedures for common DB actions.
+*   **[scripts/](file:///home/josef/github.com/josmac69/postgresql_support_docs/scripts/README.md)**: Zero-dependency, read-only diagnostic utilities (described below).
+*   **[PostgreSQL/](file:///home/josef/github.com/josmac69/postgresql_support_docs/PostgreSQL/README.md)**: Master reference manuals, playbooks, configuration guides, upgrades, and autovacuum tuning docs.
+*   **[Patroni/](file:///home/josef/github.com/josmac69/postgresql_support_docs/Patroni/README.md)**: Three-node Patroni high-availability Docker sandbox and technical research.
+*   **[Linux_tools/](file:///home/josef/github.com/josmac69/postgresql_support_docs/Linux_tools/README.md)**: GDB debugging, perf profiling, and OS-level sysctl kernel tuning.
+*   **[Barman/](file:///home/josef/github.com/josmac69/postgresql_support_docs/Barman/README.md)**: Disaster recovery and WAL streaming manuals for Barman.
+*   **[pgBackRest/](file:///home/josef/github.com/josmac69/postgresql_support_docs/pgBackRest/README.md)**: Parallel backup and restore architecture guide.
+*   **[repmgr/](file:///home/josef/github.com/josmac69/postgresql_support_docs/repmgr/README.md)**: PostgreSQL replication manager failover internals.
+*   **[wal-g/](file:///home/josef/github.com/josmac69/postgresql_support_docs/wal-g/README.md)**: WAL-G block-level compressed backup internals.
+*   **[streaming_replication/](file:///home/josef/github.com/josmac69/postgresql_support_docs/streaming_replication/README.md)**: Core code-level references on streaming replication.
+*   **[Distributed_Configuration_Store_(DCS)/](file:///home/josef/github.com/josmac69/postgresql_support_docs/Distributed_Configuration_Store_(DCS)/README.md)**: etcd, Consul, and ZooKeeper consensus comparisons.
+*   **[kubernetes_operators/](file:///home/josef/github.com/josmac69/postgresql_support_docs/kubernetes_operators/README.md)**: CloudNativePG and Percona Operator architectural comparisons.
+*   **[EDB_MTK/](file:///home/josef/github.com/josmac69/postgresql_support_docs/EDB_MTK/README.md)**: EDB Postgres Migration Toolkit dockerized lab and CLI wrappers.
+*   **[EDB_PEM/](file:///home/josef/github.com/josmac69/postgresql_support_docs/EDB_PEM/README.md)**: EDB Postgres Enterprise Manager dockerized monitoring stack.
+*   **[liquibase/](file:///home/josef/github.com/josmac69/postgresql_support_docs/liquibase/README.md)**: Liquibase schema migration dockerized lab.
+*   **[MySQL/](file:///home/josef/github.com/josmac69/postgresql_support_docs/MySQL/README.md)**: MySQL comparison report for PostgreSQL DBA specialists and Paxos Group Replication.
+*   **[NoSQL/](file:///home/josef/github.com/josmac69/postgresql_support_docs/NoSQL/README.md)**: MongoDB to PostgreSQL migration case studies.
+*   **[AI_tools/](file:///home/josef/github.com/josmac69/postgresql_support_docs/AI_tools/README.md)**: Claude hidden features and PostgreSQL AI extensions catalog.
+*   **[miscellaneous/](file:///home/josef/github.com/josmac69/postgresql_support_docs/miscellaneous/README.md)**: Cloud updates, nested learning, and RESTful API guides.
 
 ---
 
