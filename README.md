@@ -19,7 +19,7 @@ To provide a production-ready, version-controlled reference for database adminis
 *   **[repmgr/](file:///home/josef/github.com/josmac69/postgresql_support_docs/repmgr/README.md)**: PostgreSQL replication manager failover internals.
 *   **[wal-g/](file:///home/josef/github.com/josmac69/postgresql_support_docs/wal-g/README.md)**: WAL-G block-level compressed backup internals.
 *   **[streaming_replication/](file:///home/josef/github.com/josmac69/postgresql_support_docs/streaming_replication/README.md)**: Core code-level references on streaming replication.
-*   **[Distributed_Configuration_Store_(DCS)/](file:///home/josef/github.com/josmac69/postgresql_support_docs/Distributed_Configuration_Store_(DCS)/README.md)**: etcd, Consul, and ZooKeeper consensus comparisons.
+*   **[Distributed_Configuration_Store_DCS/](file:///home/josef/github.com/josmac69/postgresql_support_docs/Distributed_Configuration_Store_DCS/README.md)**: etcd, Consul, and ZooKeeper consensus comparisons.
 *   **[kubernetes_operators/](file:///home/josef/github.com/josmac69/postgresql_support_docs/kubernetes_operators/README.md)**: CloudNativePG and Percona Operator architectural comparisons.
 *   **[EDB_MTK/](file:///home/josef/github.com/josmac69/postgresql_support_docs/EDB_MTK/README.md)**: EDB Postgres Migration Toolkit dockerized lab and CLI wrappers.
 *   **[EDB_PEM/](file:///home/josef/github.com/josmac69/postgresql_support_docs/EDB_PEM/README.md)**: EDB Postgres Enterprise Manager dockerized monitoring stack.

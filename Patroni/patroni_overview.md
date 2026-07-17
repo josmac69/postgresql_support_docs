@@ -1,6 +1,6 @@
 # Patroni: Deep Dive & Learning Guide
 
-Patroni is an open-source template for building customized High Availability (HA) PostgreSQL solutions. It uses a Distributed_Configuration_Store_(DCS) such as **etcd**, **Consul**, or **ZooKeeper** to coordinate cluster state and manage leader election, failover, and configuration distribution.
+Patroni is an open-source template for building customized High Availability (HA) PostgreSQL solutions. It uses a Distributed_Configuration_Store_DCS such as **etcd**, **Consul**, or **ZooKeeper** to coordinate cluster state and manage leader election, failover, and configuration distribution.
 
 This guide details the core concepts, architecture, operations, and troubleshooting workflows you need to master Patroni.
 
@@ -36,7 +36,7 @@ Patroni runs as a daemon (controller process) on the same host/container as the 
 - Dynamically updating PostgreSQL configuration (`postgresql.conf`, `pg_hba.conf`).
 - Running custom scripts or commands during lifecycle transitions (e.g., post-promote, post-bootstrap).
 
-### Distributed_Configuration_Store_(DCS)
+### Distributed_Configuration_Store_DCS
 PostgreSQL lacks a built-in mechanism to agree on which node is the master (leader) across a network. Patroni solves this by outsourcing state agreement to a DCS like `etcd`. 
 - **The Key-Value Path:** Inside the DCS, Patroni maintains a directory structure under `/service/<scope_name>/` (e.g., `/service/my-cluster/`).
 - **The Leader Key:** The node holding the leader lease writes its node name to `/service/<scope_name>/leader` with a Time-To-Live (TTL).
